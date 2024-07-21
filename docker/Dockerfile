@@ -93,5 +93,8 @@ RUN chmod 777 /var/www/local
 RUN chmod 777 /var/www/local/html
 RUN chmod 755 /var/www/local/cgi-bin/mt/*.cgi
 
+# MySQLクライアントをインストール
+RUN dnf -y install mysql
+
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
